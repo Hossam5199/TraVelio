@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Booking Form</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap1.min.css" />
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/styleBook.css" />
+	
+
+
+
+</head>
+
+<body>
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<form id="form" >
+						
+                            <div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Name</span>
+										<input class="form-control" type="text" id="name" placeholder="Name" autocomplete="off" required>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Email</span>
+										<input class="form-control" type="email" id="email" placeholder="Email" autocomplete="off" required>
+									</div>
+								</div>
+							</div>
+                            
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Flying from</span>
+										<input class="form-control" type="text" id="from" placeholder="City or airport" autocomplete="off" required>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Flyning to</span>
+										<input class="form-control" type="text" id="to" placeholder="City or airport" autocomplete="off" required>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">Departing</span>
+										<input class="form-control" id="departureDate" type="date" required>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">Returning</span>
+										<input class="form-control" id="returningDate" type="date" required>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<span class="form-label">Adults (18+)</span>
+										<select class="form-control">
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+                                            <option>4</option>
+											<option>5</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<span class="form-label">Children (0-17)</span>
+										<select class="form-control">
+											<option>0</option>
+											<option>1</option>
+											<option>2</option>
+                                            <option>3</option>
+											<option>4</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<span class="form-label">Travel class</span>
+										<select class="form-control">
+											<option>Economy class</option>
+											<option>Business class</option>
+											<option>First class</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-btn">
+										<button class="submit-btn" id="save">Book Now</button> 	
+									</div>
+									<div class="form-btn">
+										<button class="submit-btn" data-toggle="modal" data-target="#myModal" >Show Info</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	Modal
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+
+		  <div class="modal-content">
+			<div class="modal-header" id="model-header"  >
+			  <button type="button" class="close" data-dismiss="modal">&times;</button>
+			  <h4 class="modal-title">Passenger Information</h4>
+			</div>
+
+			<div class="modal-body" id="moddel">
+				<table>
+					<tr>
+						<td>
+							Name:
+						</td>
+						<td>
+							<span id="passengerName"></span>
+						</td>
+					</tr>
+	
+					<tr>
+						<td>
+							Email:
+						</td>
+						<td>
+							<span id="passengerEmail"></span>
+						</td>
+					</tr>
+	
+					<tr>
+						<td>
+							From:
+						</td>
+						<td>
+							<span id="FROM"></span>
+						</td>
+					</tr>
+	
+					<tr>
+						<td>
+							To:
+						</td>
+						<td>
+							<span id="TO"></span>
+						</td>
+					</tr>
+	
+					<tr>
+						<td>
+							Departure:
+						</td>
+						<td>
+							<span id="departure"></span>
+						</td>
+					</tr>
+	
+					<tr>
+						<td>
+							Returning:
+						</td>
+						<td>
+							<span id="return"></span>
+						</td>
+					</tr>
+				</table>
+	
+			</div>
+
+			<div class="modal-footer">
+			  <button type="button" id="close" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		  </div>
+		  
+		</div>
+	  </div>
+
+
+	  <script src="js/jsScript.js"></script>
+
+	
+</body>
+
+</html>
